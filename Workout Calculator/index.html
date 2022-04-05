@@ -13,21 +13,24 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-<section class="top">
-	<h1>Workout Calculator</h1>
-	<label for="pizzaSelect">Choose a pizza:</label>
+		<section class="top">
+			<h1>Workout Calculator</h1>
+		</section>
 
-<input type="number" placeholder="How many calories do you want to burn?" name="calories" id="pizzaSize">
-<button id="calorie">Caloriculate!</button>
-
+<section class="piz">
 	<img id="pizza" src="assets/images/pizza.png" alt="pizza">
-	
-</section>
+</section>	
 <section class="workoutInput">
-	<input type="number"  name="workout time" placeholder="How many minutes do you want to work out?" id="workoutTime">
-	<input type="text" name="workout name" placeholder="Enter a workout name" id="workoutName">
-
-
+	<label for="pizzaSelect">Calories you want to burn:</label>
+	<input type="number" placeholder="Calories" name="calories" id="pizzaSize">>
+	<br>
+	<label for="minutes">Minutes of exercise?</label>
+	<input type="number"  name="workout time" placeholder="MINUTES?" id="workoutTime">
+	<br>
+	<label for="sets">How many sets?</label>
+	<input type="text" name="sets" placeholder="number of sets" id="workoutName">
+	<br>
+	<button id="calorie">Calculate!</button>
 </section>
 
 
