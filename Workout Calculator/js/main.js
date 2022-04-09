@@ -19,26 +19,42 @@ function pizzaSize(){
     }
 }
 
-    
-document.querySelector('#calorie').addEventListener('click', timer)
 
-function timer(){
-    let time = document.querySelector('#workoutTime').value*60000
-    console.log(time)
     
-    while (time > 0){
-        setInterval(decreasePizza, [1000])
-        time = time - 1000
+document.querySelector('#calorie').addEventListener('click', setInit)
+
+function setInit(){
+    setInterval(updateCountdown, 1000)
+    let countDownEl  = document.getElementById('workoutTime').value
+    let time = countDownEl * 60
+function updateCountdown(){ 
+    const minutes = Math.floor(time / 60);
+    let seconds = time % 60
+    seconds = seconds < 10? '0' + seconds : seconds;
+   document.getElementById('pizza').style.width =  `${seconds}` + 'rem'
+   document.querySelector('.timer').innerHTML = `${minutes}: ${seconds}`
+   if (minutes <= 0 && seconds <= 0){clearInterval(updateCountdown)}
+   else {time--}
+}  
 }
 
-function decreasePizza(){
-    console.log('pizza')
-}
-}
-    // setInterval("countdown()",1000){
-    //     console.log(time)
-    //     time--
-    //     if (time === 0){
-    //         alert('Pizza gone');
-    //         }}
-    // countdownId = setInterval("countdown()", 1000)}
+
+// function setInit(){
+//     let time = document.querySelector('#workoutTime').value*60000
+//     timer(time)
+// }
+
+// function timer(time){
+//  let time2 = time - 1000;
+//  console.log(time2)
+//  setTimeout(() => {timer(time2)}, 1000)
+//  while (time <= 0){
+//     clearTimeout(timer);
+//   }
+// }
+
+
+
+// function red(time2){
+
+// 
